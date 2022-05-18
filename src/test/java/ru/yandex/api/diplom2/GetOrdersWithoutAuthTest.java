@@ -3,6 +3,7 @@ package ru.yandex.api.diplom2;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Before;
 import org.junit.Test;
+import ru.yandex.api.diplom2.client.OrdersClient;
 
 import static org.hamcrest.Matchers.is;
 

@@ -1,10 +1,14 @@
 package ru.yandex.api.diplom2;
 
-
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.Before;
 import org.junit.Test;
+import ru.yandex.api.diplom2.client.IngredientsClient;
+import ru.yandex.api.diplom2.client.OrdersClient;
+import ru.yandex.api.diplom2.model.Ingredient;
+import ru.yandex.api.diplom2.model.IngredientsRequest;
+import ru.yandex.api.diplom2.model.IngredientsResponse;
 
 import java.util.ArrayList;
 
@@ -25,7 +29,6 @@ public class CreateOrdersWithoutAuthTest {
 
         response = ingredientsClient.getIngredients();
         response.then().assertThat().statusCode(200);
-
     }
 
     @Test
@@ -44,5 +47,4 @@ public class CreateOrdersWithoutAuthTest {
                 .body("success", is(true))
                 .body("order.number", notNullValue());
     }
-
 }

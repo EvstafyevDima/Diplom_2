@@ -1,14 +1,13 @@
-package ru.yandex.api.diplom2;
-
+package ru.yandex.api.diplom2.model;
 
 import com.github.javafaker.Faker;
 import io.qameta.allure.Step;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.apache.commons.lang3.RandomStringUtils;
 
 @Data
-@Builder
+@AllArgsConstructor
 public class User {
 
     public String email;
@@ -24,5 +23,4 @@ public class User {
         User user = new User(email, password, name);
         return user;
     }
-
 }

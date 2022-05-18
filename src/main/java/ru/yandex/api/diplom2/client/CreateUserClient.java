@@ -1,11 +1,10 @@
-package ru.yandex.api.diplom2;
+package ru.yandex.api.diplom2.client;
 
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
+import ru.yandex.api.diplom2.model.User;
 
 import static io.restassured.RestAssured.given;
-import static ru.yandex.api.diplom2.StellarBurgersRestClient.getBaseSpec;
-
 
 public class CreateUserClient extends StellarBurgersRestClient {
 
@@ -31,7 +30,6 @@ public class CreateUserClient extends StellarBurgersRestClient {
                 .post(User_PATH + "login")
                 .then()
                 .log().all();
-
     }
 
     @Step("Изменение пользователя")
@@ -67,5 +65,4 @@ public class CreateUserClient extends StellarBurgersRestClient {
                 .then()
                 .log().all();
     }
-
 }

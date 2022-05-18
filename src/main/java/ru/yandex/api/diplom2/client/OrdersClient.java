@@ -1,9 +1,8 @@
-package ru.yandex.api.diplom2;
-
+package ru.yandex.api.diplom2.client;
 
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
-
+import ru.yandex.api.diplom2.model.IngredientsRequest;
 
 import static io.restassured.RestAssured.given;
 

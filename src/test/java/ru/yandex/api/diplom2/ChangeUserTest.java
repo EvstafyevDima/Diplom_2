@@ -6,6 +6,8 @@ import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import ru.yandex.api.diplom2.model.User;
+import ru.yandex.api.diplom2.client.model.CreateUserClient;
 
 import static org.hamcrest.Matchers.is;
 
@@ -45,7 +47,6 @@ public class ChangeUserTest {
                 .statusCode(200)
                 .body("success", is(true))
                 .body("user.name", is(name));
-
     }
 
     @Test
@@ -57,7 +58,6 @@ public class ChangeUserTest {
                 .statusCode(200)
                 .body("success", is(true))
                 .body("user.email", is(email));
-
     }
 
     @Test
@@ -77,6 +77,5 @@ public class ChangeUserTest {
                 .statusCode(401)
                 .body("success", is(false))
                 .body("message", is("You should be authorised"));
-
     }
 }

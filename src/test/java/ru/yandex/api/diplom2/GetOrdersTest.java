@@ -1,13 +1,18 @@
 package ru.yandex.api.diplom2;
 
-
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+import ru.yandex.api.diplom2.client.IngredientsClient;
+import ru.yandex.api.diplom2.client.OrdersClient;
+import ru.yandex.api.diplom2.model.Ingredient;
+import ru.yandex.api.diplom2.model.IngredientsRequest;
+import ru.yandex.api.diplom2.model.IngredientsResponse;
+import ru.yandex.api.diplom2.model.User;
+import ru.yandex.api.diplom2.client.model.CreateUserClient;
 
 import java.util.ArrayList;
 
@@ -30,13 +35,11 @@ public class GetOrdersTest {
 
         user = User.getRandom();
 
-
         ValidatableResponse responseUser = сreateUserClient.createUser(user);
         token = responseUser.extract().path("accessToken");
         responseUser.assertThat()
                 .statusCode(200)
                 .body("success", is(true));
-
     }
 
     @After
@@ -45,7 +48,6 @@ public class GetOrdersTest {
                 .statusCode(202)
                 .body("success", is(true))
                 .body("message", is("User successfully removed"));
-
     }
 
     @Test
@@ -70,7 +72,5 @@ public class GetOrdersTest {
                 .body("success", is(true))
                 .body("orders", notNullValue());
     }
-
-
 }
 

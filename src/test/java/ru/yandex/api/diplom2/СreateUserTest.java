@@ -5,17 +5,16 @@ import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+import ru.yandex.api.diplom2.model.User;
+import ru.yandex.api.diplom2.client.model.CreateUserClient;
 
 import static org.hamcrest.Matchers.is;
-
 
 public class СreateUserTest {
 
     CreateUserClient createUserClient;
     User user;
     String token;
-
 
     @Before
     public void setUp() {
@@ -49,7 +48,6 @@ public class СreateUserTest {
         createUserClient.createUser(user).assertThat().statusCode(403)
                 .body("success", is(false))
                 .body("message", is("Email, password and name are required fields"));
-
     }
 
     @Test
@@ -59,7 +57,6 @@ public class СreateUserTest {
         createUserClient.createUser(user).assertThat().statusCode(403)
                 .body("success", is(false))
                 .body("message", is("Email, password and name are required fields"));
-
     }
 
     @Test
@@ -69,7 +66,6 @@ public class СreateUserTest {
         createUserClient.createUser(user).assertThat().statusCode(403)
                 .body("success", is(false))
                 .body("message", is("Email, password and name are required fields"));
-
     }
 
     @Test
@@ -84,5 +80,4 @@ public class СreateUserTest {
                 .body("message", is("User already exists"));
 
     }
-
 }

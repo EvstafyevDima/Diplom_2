@@ -1,4 +1,4 @@
-package ru.yandex.api.diplom2;
+package ru.yandex.api.diplom2.model;
 
 import lombok.Getter;
 

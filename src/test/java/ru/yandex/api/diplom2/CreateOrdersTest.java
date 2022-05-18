@@ -7,13 +7,21 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import ru.yandex.api.diplom2.client.IngredientsClient;
+import ru.yandex.api.diplom2.client.OrdersClient;
+import ru.yandex.api.diplom2.model.Ingredient;
+import ru.yandex.api.diplom2.model.IngredientsRequest;
+import ru.yandex.api.diplom2.model.IngredientsResponse;
+import ru.yandex.api.diplom2.model.User;
+import ru.yandex.api.diplom2.client.model.CreateUserClient;
 import java.util.ArrayList;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class CreateOrdersTest {
-    OrdersClient OrdersClient;
+
+    ru.yandex.api.diplom2.client.OrdersClient OrdersClient;
     CreateUserClient сreateUserClient;
     IngredientsClient ingredientsClient;
     User user;
@@ -42,8 +50,6 @@ public class CreateOrdersTest {
                 .statusCode(202)
                 .body("success", is(true))
                 .body("message", is("User successfully removed"));
-
-        //TODO Удалить заказ. В документации нет
     }
 
     @Test

@@ -1,4 +1,4 @@
-package ru.yandex.api.diplom2;
+package ru.yandex.api.diplom2.client;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;

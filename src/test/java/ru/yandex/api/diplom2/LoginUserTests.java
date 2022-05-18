@@ -5,6 +5,8 @@ import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import ru.yandex.api.diplom2.model.User;
+import ru.yandex.api.diplom2.client.model.CreateUserClient;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
@@ -39,7 +41,6 @@ public class LoginUserTests {
                 .body("success", is(true))
                 .body("accessToken", notNullValue())
                 .body("refreshToken", notNullValue());
-
     }
 
     @Test
@@ -59,5 +60,4 @@ public class LoginUserTests {
                 .body("success", is(false))
                 .body("message", is("email or password are incorrect"));
     }
-
 }
